@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>欢迎光临</title>
+    <script src="/myapp/media/jquery-3.3.1.js"></script>
+    <script language="JavaScript">
+    $(function () {
+        $.ajax({
+            url: 'http://127.0.0.1:8000/upload/',
+            type: 'POST',
+            cache: false,
+            data: new FormData($('#form1')[0]),
+            processData: false,
+            contentType: false,
+            success:function (res) {
+                console.log(1111)
+            }})})
+
+    </script>
+</head>
+<body>
+
+<p>action 是文件提交后跳转的页面</p>
+<form id='form1' method = "post" action="/upload/" enctype="multipart/form-data">
+    <h4>{% csrf_token %}</h4>
+    <input type="file" name="file" >
+    <input type="submit" value="提交">
+
+</form>
+</body>
+</html>
