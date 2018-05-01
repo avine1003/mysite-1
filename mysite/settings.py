@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'learning_logs',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -123,4 +124,6 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = (os.path.join(BASE_DIR, 'myapp/media'),)
+
+LOGIN_URL = '/users/login/'
 

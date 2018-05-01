@@ -21,5 +21,6 @@ urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'home/', myapp_views.home, name='home'),
     url(r'upload/', myapp_views.upload),
+    url(r'^users/', include('users.urls', namespace='users')),
     url(r'', include('learning_logs.urls', namespace='learning_logs')),
 ]
